@@ -1,0 +1,190 @@
+{% extends 'dryApp/base.html' %}
+
+
+{% block body_block %}
+
+
+<div class="container">
+  {% for message in messages %}
+    <div class="alert alert-success text-center">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+            {{ message }}
+    </div>
+  {% endfor %}
+</div>
+
+<div class="slider" style="width: 100%;">
+  <div class="sliders">
+
+    <div class="mySlides fade">
+      <div class="">
+        <img src="http://www.theantiguaguide.com/wp-content/uploads/2017/02/laundry-700.jpg" class="image">
+      </div>
+      <div class="imgtxt1" style="display:block;">
+        <h6 class="txthead">WE BRING YOU</h6>
+        <h3 class="txttitle" >BONNY BEST LAUNDRY SERVICES</h3>
+        <p>We make sure that you get the best laundry services delivered to your doorstep. We are reliable, efficient and sparkling</p>
+      </div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="">
+        <img src="https://www.fasola.jp/search/floor-map/no3/img/pic-dcp.jpg" class="image">
+      </div>
+      <div class="imgtxt1">
+        <h6 class="txthead">WHAT DO YO WANT?</h6>
+        <h3 class="txttitle">SHOPPING MADE A LOT EASIER!</h3>
+        <p>We will always try and find a way to make it easier and more convinient. Relax while we do the running around for you</p>
+      </div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="">
+        <img src="https://s3.amazonaws.com/mysun-upload/uploads/2017/11/Save-electricity.jpg" class="image">
+      </div>
+      <div class="imgtxt1">
+        <h6 class="txthead">NEED HELP...</h6>
+        <h3 class="txttitle">WE CAN PAY YOUR LIGHT BILLS</h3>
+        <p>Have you considered the stress of queing up just to pay your light bills? You don't need to worry anymore, just give us a call today</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="below">
+  <div style="text-align:center; padding-bottom:5px; padding-top:6px;">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+    <div class="container">
+      <section>
+          <h1 style="text-transform: uppercase;">no nonsense, we deliver</h1>
+          <p>Fast, Reliable, Sparkling. Any Office, Any Business, Any Time, We Deliver.</p>
+      </section>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+              <ul class="menust">
+                <li><span><i class="fas fa-chevron-circle-right"></i></span>  Errands Services by Appointment</li>
+                <li><span><i class="fas fa-chevron-circle-right"></i></span>  Grocery Shopping</li>
+                <li><span><i class="fas fa-chevron-circle-right"></i></span>  Electricity Bill Payment</li>
+                <li><span><i class="fas fa-chevron-circle-right"></i></span>  Secure Legal document Delivery</li>
+                <li><span><i class="fas fa-chevron-circle-right"></i></span>  Laundry Services</li>
+              </ul>
+              <p class="menust">If you have a question, please give us a call. We can almost always find a way to take care of whatever you may need.
+                Call us today, we will find a way to take care of your needs.</p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                <div class="image_below">
+                  <div class="container">
+                    <img id="img_below" src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="image">
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="contact_us color-rotate">
+            <div class="container">
+              <h1 class="text-center">Contact Us</h1>
+              <h5 class="head container">feedback form</h5>
+
+              <form class="" action="{% url 'my_messages' %}" method="POST">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-4 col-sm-4 col-sm-6">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                      {{ form.errors }}
+
+                      <div class="form-group">
+                        <input type="submit" value="Send" class="btn btn-primary btn-block">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-sm-6">
+                      <div class="container">
+                        <img src="https://images.unsplash.com/photo-1533087053677-60bb97f0b3bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="image" style="height:150px; width:100%;">
+                      </div>
+                      <div style="margin-top:15px; margin-bottom:20px; text-align:center;">
+                        <a href="tel:+2348137370891"><button type="button" class="btn btn-outline-success btn-lg nav-styles">CALL US NOW
+                         <span><i class="fas fa-phone"></i></span></button></a>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                      <h5 class="head"><span><i class="fas fa-map-marker-alt"></i></span> address</h5>
+                      <p>Abalamabie Road, adjacent Oil and Gas Polythecnic</p>
+                      <p>Bonny Island</p>
+                      <hr>
+                      <p>Email: sparkling@gmail.com</p>
+                      <p><strong>Phone: 08137370891</strong></p>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+
+            </div>
+        </div>
+      </div>
+
+      <div class="footer color-rotate">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <h5 class="nav-styles" style="padding-top: 15px;">ABOUT US</h5>
+              <p>Sparkling is an emerging technology that helps to make things easier and accessible to us, anytime, anyday.
+                We are a devoted set of individuals that focus on making your life simpler. Sparkling is the result of a simple need...someone to help do anything.
+                Many work very long hours and have limited time for everything else. No time to wash, pay your bills...we can bring you whatever you like
+                and you continue working and making the most of your work hours. Once you get home you want to spend your remaining time with your family or friends.
+                Relax, let us do the running around. Life is short...enjoy it.
+                Give us a try...you might just like it.</p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <h5 class="nav-styles" style="padding-top: 15px;">OUR CLIENTS</h5>
+              <div class="client1">
+                <img src="https://images.unsplash.com/photo-1516913508865-558a64071d82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="" style="width:90px; height:90px; border-radius:50%;">
+                <p style="float:right; padding-top: 10px; padding-right: 17%;">Usher dry cleaning services <br> and general merchandise</p>
+              </div>
+              <hr>
+              <div class="client2">
+                <img src="https://images.unsplash.com/photo-1535731881402-bd9275a40ab2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="" style="width:90px; height:90px; border-radius:50%;">
+                <p style="float:right; padding-top: 10px; padding-right: 17%;">Hart Banigo shopping  mall <br> located at Finima <br> roundabout, Bonny Island</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <h5 class="nav-styles" style="padding-top: 15px;">CONNECT WITH US</h5>
+              <div class="social">
+                <a href="https://www.facebook.com"><img style="height:70px; width:50px;" src="https://image.flaticon.com/icons/svg/187/187189.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com"><img style="height:70px; width:50px;" src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="Instagram"></a>
+                <a href="https://www.twitter.com"><img style="height:70px; width:50px;" src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="Twitter"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="end_footer">
+        <div class="container">
+          <div class="second_row">
+              &copy; 2019 All rights reserved. Spark Errand Service, Bonny Island
+          </div>
+        </div>
+      </div>
+
+   </div>
+
+
+   {% endblock %}
